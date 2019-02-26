@@ -1,0 +1,56 @@
+﻿@using MekahronAuth.Models
+
+@model LoginResultModel
+
+@if (Model != null && Model.BadLoginModel != null)
+{
+    if (Model.BadLoginModel.ResultCode == 0)
+    {
+        <div class="alert alert-success" role="alert">
+            Success login
+        </div>
+        <h5>
+            Entity details
+        </h5>
+        <div>
+            @Html.LabelFor(s => s.SuccessLoginModel.Address)
+            @Html.DisplayFor(m => m.SuccessLoginModel.Address);
+            @Html.LabelFor(s => s.SuccessLoginModel.City)
+            @Html.DisplayFor(m => m.SuccessLoginModel.City);
+            @Html.LabelFor(s => s.SuccessLoginModel.Company)
+            @Html.DisplayFor(m => m.SuccessLoginModel.Company);
+            @Html.LabelFor(s => s.SuccessLoginModel.Country)
+            @Html.DisplayFor(m => m.SuccessLoginModel.Country);
+            @Html.LabelFor(s => s.SuccessLoginModel.CountryID)
+            @Html.DisplayFor(m => m.SuccessLoginModel.CountryID);
+            @Html.LabelFor(s => s.SuccessLoginModel.EmailConfirm)
+            @Html.DisplayFor(m => m.SuccessLoginModel.EmailConfirm);
+            @Html.LabelFor(s => s.SuccessLoginModel.EntityId)
+            @Html.DisplayFor(m => m.SuccessLoginModel.EntityId);
+            @Html.LabelFor(s => s.SuccessLoginModel.FirstName)
+            @Html.DisplayFor(m => m.SuccessLoginModel.FirstName);
+            @Html.LabelFor(s => s.SuccessLoginModel.FTPHost)
+            @Html.DisplayFor(m => m.SuccessLoginModel.FTPHost);
+            @Html.LabelFor(s => s.SuccessLoginModel.FTPPort)
+            @Html.DisplayFor(m => m.SuccessLoginModel.FTPPort);
+            @Html.LabelFor(s => s.SuccessLoginModel.LastName)
+            @Html.DisplayFor(m => m.SuccessLoginModel.LastName);
+            @Html.LabelFor(s => s.SuccessLoginModel.lid)
+            @Html.DisplayFor(m => m.SuccessLoginModel.lid);
+            @Html.LabelFor(s => s.SuccessLoginModel.Mobile)
+            @Html.DisplayFor(m => m.SuccessLoginModel.Mobile);
+            @Html.LabelFor(s => s.SuccessLoginModel.MobileConfirm)
+            @Html.DisplayFor(m => m.SuccessLoginModel.MobileConfirm);
+            @Html.LabelFor(s => s.SuccessLoginModel.Phone)
+            @Html.DisplayFor(m => m.SuccessLoginModel.Phone);
+            @Html.LabelFor(s => s.SuccessLoginModel.Zip)
+            @Html.DisplayFor(m => m.SuccessLoginModel.Zip);
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.BadLoginModel.ResultMessage
+        </div>
+    }
+}
